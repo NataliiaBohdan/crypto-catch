@@ -1,3 +1,15 @@
+CryptoCatch is a sleek web app where you can search and track any cryptocurrency you want, keeping an eye on its latest price changes — whether it’s soaring or dipping.
+
+✨ Features:
+
+Search any crypto to see real-time price growth or drop
+
+Buy crypto securely — log in with your Google account or create a new account in seconds
+
+🛠 Tech Stack:
+Built with React, Next.js, NextAuth.js for authentication, and styled using Tailwind CSS for a modern, responsive look.
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
