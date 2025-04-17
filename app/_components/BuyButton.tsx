@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 export default function BuyButton() {
   const router = useRouter();
 
-  const handleBuyClick = (e: React.MouseEvent) => {
+  const handleBuyClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.stopPropagation();
     router.push("/login");
   };
