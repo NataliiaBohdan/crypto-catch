@@ -2,11 +2,12 @@
 
 import React, { useState, useEffect } from "react";
 import useSWR from "swr";
-import { useSession } from "next-auth/react"; 
+import { useSession } from "next-auth/react";
 import CryptoSearch from "./Input";
 import CryptoModal from "./Modal";
 import Logo from "./Logo";
 import BuyButton from "./BuyButton";
+import Image from "next/image";
 
 interface Crypto {
   id: string;
@@ -19,7 +20,7 @@ interface Crypto {
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
 export default function CryptoList() {
-  const { data: session } = useSession(); 
+  const { data: session } = useSession();
   const { data, error, isLoading } = useSWR<Crypto[]>("./api/coins", fetcher);
 
   const [search, setSearch] = useState<string>("");
@@ -77,7 +78,7 @@ export default function CryptoList() {
           }}
           className="flex items-center gap-4 mb-2 cursor-pointer border border-gray-200 p-2.5 rounded-lg hover:bg-blue-50 transition"
         >
-          <img src={coin.image} alt={coin.name} className="w-8 h-8 mr-3" />
+          <Image src={coin.image} alt={coin.name} width={30} height={30} />
           <span className="flex-1 font-bold">{coin.name}</span>
           <strong className={`${getPriceChangeColor(coin)}`}>
             ${coin.current_price.toFixed(2)}
